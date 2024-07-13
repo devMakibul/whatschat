@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>WhatsChat Viewer</title>
+  <meta name="title" content="WhatsChat Viewer">
+  <meta content='View and analyse txt file exported from any WhatsApp chat' name='description'/>
+  <meta content='website' property='og:type'/>
+  <meta content='https://whatschat.makibul.com' property='og:url'/>
+  <meta content='WhatsChat - View and Analyse WhatsApp Chat' property='og:title'/>
+  <meta content='View and analyse txt file exported from any WhatsApp chat' property='og:description'/>
+  <meta content='./assets/images/meta-banner.png' property='og:image'/>
+  <meta content='summary_large_image' property='twitter:card'/>
+  <meta content='@devMakibul' name='twitter:site'/>
+  <meta content='@devMakibul' name='twitter:creator'/>
+  <meta content='https://whatschat.makibul.com' property='twitter:url'/>
+  <meta content='WhatsChat - View and Analyse WhatsApp Chat' property='twitter:title'/>
+  <meta content='View and analyse txt file exported from any WhatsApp chat' property='twitter:description'/>
+  <meta content='./assets/images/meta-banner.png' property='twitter:image'/>
+  <link href='./assets/images/apple-touch-icon.png' rel='apple-touch-icon' sizes='180x180'/>
+  <link href='./assets/images/favicon.ico' rel='shortcut icon' sizes='any' type='image/png'/>
+  <link href='./assets/images/site.webmanifest' rel='manifest'/>
+  
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <h3 class="title">WhatsChat Viewer</h3>
+        <span class="theme-toggle">Theme</span>
+    </header>
+
+    <section id="introdivs">
+        <div class="intro-desc">
+            <div class="wc-intro">
+                <div class="wc-intro-inner">
+                    <div class="intro-title">WhatsChat Viewer <span>for WhatsApp Android <a href="./ios/index.html">iOS user?</a></span></div>
+                    <div class="short-desc">Transform those chaotic text files of exported chats into a polished
+                        WhatsApp-like chat experience.</div>
+
+                    <div class="button-list">
+                        <div class="choose-file-1" id="choosefile">
+                            <input type="file" id="file" accept="txt" onchange="readFile(this)">
+                            <label for="file">Select .txt file</label>
+                        </div>
+
+                        <div class="download-txt">
+
+                            <svg style="height: 20px; margin-right: 5px" focusable="false" aria-hidden="true"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zm-1-4-1.41-1.41L13 12.17V4h-2v8.17L8.41 9.59 7 11l5 5 5-5z">
+                                </path>
+                            </svg> example.txt
+
+                        </div>
+                    </div>
+                </div>
+                <div class='intro-thumb'>
+
+                </div>
+            </div>
+        </div>
+        <div class="spikes"></div>
+
+        <div class="feature-head">
+            <h2 class="key-features-title" id="key-features">Key Features</h2>
+            <div class="features">
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                      <img src="./assets/images/feature-icon-1.svg">
+                    </div>
+                    <div class="feature-desc">
+                        <h3>Change Viewer Perspective</h3>
+                        <span>Easily switch between senders to view the chat from different angles.</span>
+                    </div>
+                </div>
+
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                      <img src="./assets/images/feature-icon-2.svg">
+                    </div>
+                    <div class="feature-desc">
+                        <h3>Navigate by Date</h3>
+                        <span>Jump to specific dates within the chat for quick referencing.</span>
+                    </div>
+                </div>
+
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                      <img src="./assets/images/feature-icon-3.svg">
+                    </div>
+                    <div class="feature-desc">
+                        <h3>Customize Your Experience</h3>
+                        <span>Personalize the theme and wallpaper to match your preferences. Your choices are saved for
+                            future visits.</span>
+                    </div>
+                </div>
+
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                      <img src="./assets/images/feature-icon-4.svg">
+                    </div>
+                    <div class="feature-desc">
+                        <h3>Effortless Search</h3>
+                        <span>Find specific messages in a flash whatever you type.</span>
+                    </div>
+                </div>
+
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                      <img src="./assets/images/feature-icon-5.svg">
+                    </div>
+                    <div class="feature-desc">
+                        <h3>Swift Navigation</h3>
+                        <span>Quickly jump to the first or last message for efficient browsing.</span>
+                    </div>
+                </div>
+
+                <div class="feature-inner">
+                    <div class="feature-icon">
+                      <img src="./assets/images/feature-icon-6.svg">
+                    </div>
+                    <div class="feature-desc">
+                        <h3>Safe, Offline & Server-Free</h3>
+                        <span>Works without the need for an internet connection or external servers, ensuring privacy
+                            and accessibility.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="acccontainer">
+            <h2 id="quick-guide">Quick guide</h2>
+            <div class="accordion">
+
+
+                <div class="accordion-item">
+                    <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Uploading a Chat
+                            Log</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>Click on "Select .txt file" to upload your exported WhatsApp chat log.</li>
+                            <li>If you want to try this tool but you don't have a .txt file yet then you can download an
+                                example chat.</li>
+                            <li>Once uploaded, the tool will process the file and display the chat content.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Changing Viewer
+                            Perspective</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>Use the "View as" dropdown menu to select the sender whose perspective you want to view
+                                the chat from.</li>
+                            <li>The chat will re-render with messages from the selected sender on the right side.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Navigating to a
+                            Specific Date</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>Click on "Go to date" option from the menu to select a date.</li>
+                            <li>Select a date from the dropdown to navigate to messages sent on that specific day.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Searching for
+                            Messages</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>After typing in the search bar, press Enter and the tool will search for matching
+                                messages.</li>
+                            <li>Use the navigation buttons to move between search matches.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Exploring chat statistics</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>Clicking on "Analyse chat" will show you the statistics of the entire chat.</li>
+                            <li>For example: No. of messages sent by each sender, Hours of the day with most no. of messages sent, etc.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="accordion-item">
+                    <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">Changing Theme
+                            and Wallpaper</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>Your selected theme is saved in the browser cache and will persist across visits or
+                                reloads.</li>
+                            <li>Similarly, custom wallpapers are saved in the cache, but ensure image sizes aren't too
+                                large.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button id="accordion-button-6" aria-expanded="false"><span class="accordion-title">Quick
+                            Navigation</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>
+                        <ul>
+                            <li>Click on the "Go to first message" and "Go to last message" options to quickly navigate
+                                to the beginning or end of the chat.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="footer-child footer-child-1">
+                <div class="footer-child-inner">
+                    <h2 class="footer-title">WhatsChat Viewer</h2>
+                    WhatsApp exported chat viewer for Android.
+                    <span class="ios-user"><a href="./ios/index.html">iOS user?</a></span>
+                    <ul class="footer-link-1">
+                        <li><a href="#key-features" class="connect-link">Features</a></li>
+                        <li><a href="#quick-guide" class="connect-link">Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-child-inner">
+                    <h4 class="source-code-title">Source Code</h4>
+                    <ul class="source-code-ul">
+                        <li><a href="https://github.com/devMakibul/WhatsChat" class="connect-link">HTML & CSS (GitHub)</a></li>
+                        <li><a href="https://gumroad.com/makibul/" class="connect-link">HTML, CSS, JS (Soon at Gumroad)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-child footer-child-2">
+                <h4 class="connect">Connect with me</h4>
+                <a href="https://x.com/devMakibul" class="connect-link" target="_blank">X Twitter</a>
+                <a href="https://github.com/devMakibul" class="connect-link" target="_blank">GitHub</a>
+                <h4 class="connect">Contact</h4>
+                <a href="mailto:contactmakibul@gmail.com" class="connect-link" target="_blank">Email</a>
+                <a href="https://t.me/mak1bul" class="connect-link" target="_blank">Telegram</a>
+            </div>
+            <div class="footer-child footer-child-3">
+                <h4 class="support-title">Support</h4>
+                <p class="support-desc">Help me keep this tool alive.</p>
+
+                <ul class="payment-ways">
+                    <li class="payment-link"><a href="https://paypal.me/mak1bul" class="payment-link" target="_blank">Paypal</a></li>
+                    <li class="payment-link" onclick="copyText('181S97FvaU2Sw3LcRWWbZFEsvKiQ8BkHAx', 'BTC address copied')">BTC</li>
+                    <li class="payment-link" onclick="copyText('UQCnKobBnufdchOBxjrpVMEKQRxvI9cEPU5nhjuPPoLjS7Px', 'TON address copied')">TON</li>
+                    <li class="payment-link" onclick="copyText('makibul@upi', 'UPI handle copied')">UPI (India)
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-child footer-child-4">
+                <ul class="bottom-links">
+                    <li class="btm-link"><a href="privacy.html" class="connect-link">Privacy</a></li>
+                    <li class="btm-link"><a href="disclaimer.html" class="connect-link">Disclaimer</a></li>
+                </ul>
+                <div>&copy; 2024 <span><a href="https://makibul.com" target="_blank">Makibul</a></span></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="changing-sender-screen" class="loading-screen">
+        <div style="max-width: 90%;">
+            <span style="display: block">Changing viewer</span> <br>
+
+            <span style="font-size:15px; font-weight: bold; margin-top: 20px; margin-bottom: 20px;">Please
+                wait...</span>
+        </div>
+    </section>
+
+
+    <section id="searching-screen" class="loading-screen" style="z-index: 12">
+        <div style="max-width: 90%;">
+            <span style="display: block">Searching</span> <br>
+
+            <span style="font-size:15px; font-weight: bold; margin-top: 20px; margin-bottom: 20px;">Please
+                wait...</span>
+        </div>
+    </section>
+
+    <section class="wa-bg-outer" id="xxxx" style="display: none">
+        <div class="wa-bg" id="background">
+            <div class="choose-view">
+
+
+
+                <div style="display: none" class="choose-file" id="choosenewfile"
+                    onclick="exitFullscreen(); location.reload()">
+
+                    Choose another file
+                </div>
+
+                <div class="question" id="question" style="display:none;">
+                    <p>View as</p>
+                    <select id="select" onchange="showChangingSenderScreen()"></select>
+                </div>
+
+
+
+            </div>
+            <div class="navbar" id="navbar" style="display: none;">
+                <div class="back-button" onclick="exitFullscreen(); location.reload()"><svg style="width: 25px;"
+                        focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                        <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                    </svg></div>
+                <div id="DP">
+                    <div class="dp-inner">
+                        <img
+                            src="./assets/images/dp.jpg">
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%; padding-right: 10px;">
+                    <div class="theSenderName" id="theSenderName">
+                        <h1 style="margin: 0 !important">Loading chat...</h1>
+                    </div>
+
+                    <div class="top-bottom">
+                        <div style="display: flex; gap: 20px">
+                            <li style="list-style: none; display: flex; align-items: center;">
+                                <svg style="width: 25px;" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path
+                                        d="M18 10.48V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-4.48l4 3.98v-11l-4 3.98zm-2-.79V18H4V6h12v3.69z">
+                                    </path>
+                                </svg>
+                            </li>
+                            <li style="list-style: none; display: flex; align-items: center;">
+                              <svg style="width: 23px;" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57-.1-.04-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1z"></path>
+                              </svg>
+                            </li>
+
+                            <li onclick="showMoreMenu()" id="show-more-menu">
+                              <svg style="width: 25px" focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z">
+                                    </path>
+                              </svg>
+                            </li>
+
+
+                        </div>
+
+                        <div class="more-menu" id="more-menu">
+                            <ul id="more-menu-options">
+                                <li id="fullscreenButton" onclick="toggleFullscreen()">Fullscreen Mode</li>
+
+                                <li class="find-button"
+                                    onclick="showFindBoxXyz(); hideMoreMenu(); hidenavbar(); hideDate(); hideBottomBar()">
+                                    Search
+                                </li>
+
+                                <li onclick="showDateDropdown()">Go to date</li>
+
+                                <li onclick="showStats(); hideDate()">
+                                    Analyse chat
+                                </li>
+
+                                <li onclick="goToFirstMessage(); hideDate()">
+                                    Go to first message
+                                </li>
+
+                                <li onclick="goToLastMessage(); hideDate()">
+                                    Go to last message
+                                </li>
+
+                                <li onclick="changeImage(); hideDate()">Change wallpaper</li>
+                                <li onclick="deleteImage(); hideDate()" class="delete-button">Remove wallpaper</li>
+
+                                <li id="show-bottom-bar" onclick="showBottomBar()">Show bottom bar</li>
+                                <li style="display: none" id="hide-bottom-bar" onclick="hideBottomBar()">Hide bottom bar
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                        <div id="dateDropdownWrapper">
+
+                            <div id="dateDropdown" class="more-menu-2">
+                                <div id="dateNav">
+                                    <h3>Go to date</h3>
+                                    <button class="close-button" onclick="hideDate()"><svg focusable="false"
+                                            aria-hidden="true" viewBox="0 0 24 24">
+                                            <path
+                                                d="M18.3 5.71a.9959.9959 0 0 0-1.41 0L12 10.59 7.11 5.7a.9959.9959 0 0 0-1.41 0c-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z">
+                                            </path>
+                                        </svg></button>
+                                </div>
+                                <ul></ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="find-box">
+                <div class="find-box-inner">
+                    <div style="display: flex;">
+                        <button class="find-icon close-icon" onclick="closeFindBoxEfg(); shownavbar();"><svg
+                                focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                            </svg></button>
+                        <input id="searchInput" class="find-input" placeholder="Search..."
+                            onkeypress="if(event.keyCode === 13) searchText(); showSearchNavigation(); checkInputAndHideDiv()">
+                    </div>
+
+
+                    <div id="search-navigation-buttons" style="display: none; gap: 2px;">
+
+                        <button class="find-icon prev-icon" id="prevMatch" onclick="prevMatch()" disabled><svg
+                                focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"></path>
+                            </svg></button>
+
+                        <button class="find-icon next-icon" id="nextMatch" onclick="nextMatch()" disabled><svg
+                                focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                <path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
+                            </svg></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="firstMes"></div>
+
+            <div id="content" onclick="hideMoreMenu();">
+            </div>
+
+
+
+            <div class="write-msg-bar" id="write-msg-bar" style="display: none">
+                <div class="write-inner">
+                    <div class="camera-emoji-msg">
+
+                        <div class="plus-input">
+                            <div class="msg-icons plus-icon"><svg focusable="false" aria-hidden="true"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z">
+                                    </path>
+                                </svg></div>
+                            <input type="text" class="type-message" placeholder="Message" name="search">
+                        </div>
+
+                        <div class="emoji-camera">
+
+                            <div class="msg-icons emoji-icon">
+                                <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16.5 6v11.5c0 2.21-1.79 4-4 4s-4-1.79-4-4V5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5v10.5c0 .55-.45 1-1 1s-1-.45-1-1V6H10v9.5c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5V5c0-2.21-1.79-4-4-4S7 2.79 7 5v12.5c0 3.04 2.46 5.5 5.5 5.5s5.5-2.46 5.5-5.5V6h-1.5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="msg-icons camera-icon">
+                                <svg focusable="false" aria-hidden="true" viewBox="0 0 24 24">
+                                    <path
+                                        d="M20 4h-3.17L15 2H9L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h4.05l1.83-2h4.24l1.83 2H20v12zM12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="msg-icons mic-icon"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-1shn170"
+                            focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="MicRoundedIcon"
+                            tabindex="-1" title="MicRounded">
+                            <path
+                                d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z">
+                            </path>
+                        </svg></div>
+                </div>
+            </div>
+
+
+
+            <div class="bottom-bar">
+                <div id="pageInfo"></div>
+                <div class="next-prev-page-buttons">
+
+                    <button id="previousButton" onclick="displayPreviousBatch()" style="display: none"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-1shn170"
+                            focusable="false" aria-hidden="true" viewBox="0 0 24 24"
+                            data-testid="ChevronLeftOutlinedIcon" tabindex="-1" title="ChevronLeftOutlined">
+                            <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z"></path>
+                        </svg></button>
+
+                    <button id="nextButton" onclick="displayNextBatch()"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-1shn170"
+                            focusable="false" aria-hidden="true" viewBox="0 0 24 24"
+                            data-testid="ChevronRightOutlinedIcon" tabindex="-1" title="ChevronRightOutlined">
+                            <path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"></path>
+                        </svg></button>
+
+                </div>
+            </div>
+
+
+            <div class="custom-popup" id="customPopup">Not found</div>
+            <div id="lastMes"></div>
+
+        </div>
+    </section>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
