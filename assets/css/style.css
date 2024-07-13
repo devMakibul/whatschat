@@ -117,7 +117,7 @@ input {
 
 .wa-bg {
     background: center;
-    background-image: url('./assets/images/WhatsApp-bg-light.jpg');
+    background-image: url('./images/WhatsApp-bg-light.jpg');
     background-size: cover;
     background-attachment: fixed;
     max-width: 500px;
@@ -127,7 +127,7 @@ input {
 }
 
 .dark .wa-bg {
-    background-image: url('./assets/images/WhatsApp-bg-dark.jpg');
+    background-image: url('./images/WhatsApp-bg-dark.jpg');
     background-color: #03141f;
 }
 
