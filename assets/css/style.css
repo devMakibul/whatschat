@@ -1199,9 +1199,6 @@ hr {
     margin: 0 auto;
 }
 
-.dark .accordion {
-  background-color: #111;
-}
 
 @media (min-width: 640px) {
     .accordion {
