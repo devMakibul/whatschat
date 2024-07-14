@@ -457,7 +457,7 @@ input {
     background-color: black;
 }
 
-.download-txt {
+.download-txt a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -469,17 +469,16 @@ input {
     text-decoration: underline;
 }
 
-.download-txt:hover{
-    
+.download-txt a:hover{
     background-color: #00000010;
     text-decoration: none;
 } 
 
-.dark .download-txt{
+.dark .download-txt a{
     color: #fff;
 }
 
-.dark .download-txt:hover{
+.dark .download-txt a:hover{
     background-color: #ffffff20;
 }
 
@@ -1117,7 +1116,7 @@ hr {
         padding: 5px 10px;
     }
 
-    .download-txt {
+    .download-txt a{
         padding: 5px 10px;
     }
 }
